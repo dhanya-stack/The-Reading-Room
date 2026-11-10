@@ -7,7 +7,7 @@
   const DRAFT_KEY = 'between-pages-author-draft-v1';
   const THEME_KEY = 'between-pages-theme-v1';
   const shades = {sage:'#587268',rust:'#965d50',ink:'#42566a',plum:'#815764',ochre:'#987c48',blue:'#4c6c83',moss:'#59684a',clay:'#9b7962'};
-  const statusNames = {finished:'Finished',reading:'Currently reading',rereading:'Rereading',paused:'On pause','to-confirm':'To confirm'};
+  const statusNames = {finished:'Finished',reading:'Currently reading',rereading:'Rereading',paused:'On pause','want-to-read':'Want to read','to-confirm':'To confirm'};
   const clone = (val) => JSON.parse(JSON.stringify(val));
   const safeText = (value) => (value === null || value === undefined ? '' : String(value));
   function readDraft(){try {const val=JSON.parse(localStorage.getItem(DRAFT_KEY));return Array.isArray(val) ? val : null;} catch{return null;}}
@@ -80,29 +80,18 @@
   $('editThisBook').addEventListener('click',()=>{const id=activeBookId;closeBook();openEditor(id)});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('editOverlay').hidden)closeEditor();else closeBook()};if(e.key==='Tab'&&!$('dialogOverlay').hidden){const focusables=[...$('bookDialog').querySelectorAll('button:not([hidden]),a:not([hidden])')];const first=focusables[0],last=focusables.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus()}}});
 
-  function heroFeatured(){
-    const titles=['Jane Eyre','1984','The Martian','The Thursday Murder Club','The Midnight Library','Project Hail Mary','Crime and Punishment','The Untethered Soul','The Rosie Project','Dune','The Silence of the Lambs','Chip War','Seveneves','The Flatshare','Foundation','Rebecca','The Order of Time','Harry Potter and the Order of the Phoenix','The Da Vinci Code','The Silent Patient','The Bullet That Missed','Artemis','The Garden of Small Beginnings','The Science of Interstellar','The Very Secret Society of Irregular Witches','Moonflower Murders','Red Dragon','The Hot Zone'];
-    return titles.map(t=>books.find(b=>b.title===t)).filter(Boolean);
-  }
   function drawHero(){
-    const featured=heroFeatured();const halves=[featured.slice(0,14),featured.slice(14,28)];
-    ['heroShelf1','heroShelf2'].forEach((id,index)=>{
-      const shelf=$(id);shelf.replaceChildren();halves[index].forEach((book,i)=>{
+    const hero=$('heroShelves');hero.replaceChildren();const groupSize=16;
+    for(let start=0;start<books.length;start+=groupSize){
+      const shelf=el('div','scene-shelf');shelf.setAttribute('aria-label',`Reading room shelf ${start/groupSize+1}`);books.slice(start,start+groupSize).forEach((book,i)=>{
         const btn=el('button','spine');btn.type='button';btn.title=`${book.title} — ${book.author}`;btn.setAttribute('aria-label',`Open ${book.title} by ${book.author}`);
-        const width=33+(i*13+index*7)%19;const height=86+(i*17+index*21)%37;
+        const width=36+(i*11+start)%18;const height=112+(i*17+start)%43;
         btn.style.setProperty('--spine',colorFor(book));btn.style.setProperty('--spine-w',`${width}px`);btn.style.setProperty('--spine-h',`${height}px`);
         if(['ochre','clay'].includes(book.color))btn.classList.add('pale');
-        btn.append(el('span','spine-label',book.title),el('span','spine-star','✧'));
+        btn.append(el('span','spine-label',book.title));
         btn.addEventListener('click',()=>openBook(book.id));shelf.append(btn);
-      });
-    });
-    const reading=$('readingNow');reading.replaceChildren();
-    books.filter(b=>b.status==='reading').slice(0,2).forEach(book=>{
-      const item=el('div','reading-list');const btn=el('button','',book.title);btn.type='button';btn.addEventListener('click',()=>openBook(book.id));
-      item.append(btn,el('small','',book.author));
-      if(book.progress>0){const track=el('div','tiny-track');const fill=el('i');fill.style.width=`${Math.min(100,book.progress)}%`;track.append(fill);item.append(track)}reading.append(item);
-    });
-    if(!reading.childNodes.length)reading.append(el('div','reading-list','No current reads listed.'));
+      });hero.append(shelf);
+    }
   }
   function renderGenreFilter(){const menu=$('genreFilter');const current=menu.value;const genres=[...new Set(books.map(b=>b.genre).filter(Boolean))].sort((a,b)=>a.localeCompare(b));menu.replaceChildren(new Option('All genres','all'));genres.forEach(g=>menu.add(new Option(g,g)));menu.value=genres.includes(current)?current:'all'}
   function visibleBooks(){const search=$('searchInput').value.trim().toLocaleLowerCase();const status=$('statusFilter').value, genre=$('genreFilter').value;
