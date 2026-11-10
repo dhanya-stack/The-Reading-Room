@@ -80,33 +80,42 @@
   $('editThisBook').addEventListener('click',()=>{const id=activeBookId;closeBook();openEditor(id)});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('editOverlay').hidden)closeEditor();else closeBook()};if(e.key==='Tab'&&!$('dialogOverlay').hidden){const focusables=[...$('bookDialog').querySelectorAll('button:not([hidden]),a:not([hidden])')];const first=focusables[0],last=focusables.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus()}}});
 
-  function drawHero(){
-    const hero=$('heroShelves');hero.replaceChildren();const groupSize=16;
-    for(let start=0;start<books.length;start+=groupSize){
-      const shelf=el('div','scene-shelf');shelf.setAttribute('aria-label',`Reading room shelf ${start/groupSize+1}`);books.slice(start,start+groupSize).forEach((book,i)=>{
-        const btn=el('button','spine');btn.type='button';btn.title=`${book.title} — ${book.author}`;btn.setAttribute('aria-label',`Open ${book.title} by ${book.author}`);
-        const width=36+(i*11+start)%18;const height=112+(i*17+start)%43;
-        btn.style.setProperty('--spine',colorFor(book));btn.style.setProperty('--spine-w',`${width}px`);btn.style.setProperty('--spine-h',`${height}px`);
-        if(['ochre','clay'].includes(book.color))btn.classList.add('pale');
-        btn.append(el('span','spine-label',book.title));
-        btn.addEventListener('click',()=>openBook(book.id));shelf.append(btn);
-      });hero.append(shelf);
-    }
-  }
   function renderGenreFilter(){const menu=$('genreFilter');const current=menu.value;const genres=[...new Set(books.map(b=>b.genre).filter(Boolean))].sort((a,b)=>a.localeCompare(b));menu.replaceChildren(new Option('All genres','all'));genres.forEach(g=>menu.add(new Option(g,g)));menu.value=genres.includes(current)?current:'all'}
   function visibleBooks(){const search=$('searchInput').value.trim().toLocaleLowerCase();const status=$('statusFilter').value, genre=$('genreFilter').value;
     return books.filter(b=>(!search||`${b.title} ${b.author} ${b.genre}`.toLocaleLowerCase().includes(search))&&(status==='all'||b.status===status)&&(genre==='all'||b.genre===genre));}
   function drawLibrary(){
     const result=visibleBooks();const container=$('libraryShelves');container.replaceChildren();
-    const groupSize=8;for(let n=0;n<result.length;n+=groupSize){
-      const shelf=el('div','shelf-row');shelf.setAttribute('aria-label',`Shelf ${n/groupSize+1}`);
-      result.slice(n,n+groupSize).forEach(book=>{
-        const btn=el('button','book-cover-button');btn.type='button';btn.setAttribute('aria-label',`Open ${book.title} by ${book.author}`);btn.title=`${book.title} · ${book.author} · ${statusNames[book.status]||''}`;
-        btn.append(bookCover(book,'M'));btn.addEventListener('click',()=>openBook(book.id));shelf.append(btn);
-      });container.append(shelf);
-    }
-    const shelfTotal=Math.ceil(result.length/groupSize);$('resultCount').textContent=`Showing ${result.length} of ${books.length} books · ${shelfTotal} ${shelfTotal===1?'shelf':'shelves'}`;
-    $('libraryCount').textContent=`${books.length} books & counting`;$('emptyState').hidden=result.length>0;
+    const groups=[
+      {status:'reading',label:'Currently reading'},
+      {status:'rereading',label:'Rereading'},
+      {status:'finished',label:'Books I’ve read'},
+      {status:'want-to-read',label:'Want to read'},
+      {status:'paused',label:'On pause'},
+      {status:'to-confirm',label:'To confirm'}
+    ];
+    let shelfTotal=0;
+    groups.forEach(group=>{
+      const matches=result.filter(book=>book.status===group.status);if(!matches.length)return;
+      const section=el('section','collection-group');section.setAttribute('aria-label',group.label);
+      const heading=el('div','collection-group-heading');
+      heading.append(el('h3','',group.label),el('span','collection-group-count',`${matches.length} ${matches.length===1?'book':'books'}`));
+      section.append(heading);
+      const rows=el('div','collection-group-shelves');const groupSize=8;
+      for(let n=0;n<matches.length;n+=groupSize){
+        const shelf=el('div','shelf-row');shelf.setAttribute('aria-label',`${group.label} shelf ${Math.floor(n/groupSize)+1}`);
+        matches.slice(n,n+groupSize).forEach(book=>{
+          const btn=el('button','book-cover-button');btn.type='button';
+          btn.setAttribute('aria-label',`Open ${book.title} by ${book.author}`);
+          btn.title=`${book.title} · ${book.author} · ${statusNames[book.status]||''}`;
+          btn.append(bookCover(book,'M'));btn.addEventListener('click',()=>openBook(book.id));shelf.append(btn);
+        });
+        rows.append(shelf);shelfTotal++;
+      }
+      section.append(rows);container.append(section);
+    });
+    $('resultCount').textContent=`Showing ${result.length} of ${books.length} books across ${shelfTotal} ${shelfTotal===1?'shelf':'shelves'}`;
+    $('libraryCount').textContent=`${books.length} books & counting`;
+    $('emptyState').hidden=result.length>0;
   }
   function drawJournal(){
     const entries=books.filter(b=>(b.note||b.reflection)&&b.featured);const fallback=books.filter(b=>b.note||b.reflection);const pick=entries[0]||fallback[0];
@@ -122,7 +131,7 @@
     const byYear=dated.reduce((totals,book)=>{const year=book.finishedOn.slice(0,4);totals[year]=(totals[year]||0)+1;return totals},{});
     const breakdown=$('yearBreakdown');breakdown.replaceChildren();Object.keys(byYear).sort((a,b)=>b.localeCompare(a)).forEach(year=>breakdown.append(el('div','ledger-row yearly-row',el('span','','Finished in '+year),el('strong','',byYear[year]))));
   }
-  function renderAll(){drawHero();renderGenreFilter();drawLibrary();drawJournal();drawStats()}
+  function renderAll(){renderGenreFilter();drawLibrary();drawJournal();drawStats()}
   $('searchInput').addEventListener('input',drawLibrary);$('statusFilter').addEventListener('change',drawLibrary);$('genreFilter').addEventListener('change',drawLibrary);
   $('clearFilters').addEventListener('click',()=>{$('searchInput').value='';$('statusFilter').value='all';$('genreFilter').value='all';drawLibrary()});
   $('surpriseBtn').addEventListener('click',()=>{const matches=visibleBooks();if(matches.length)openBook(matches[Math.floor(Math.random()*matches.length)].id)});

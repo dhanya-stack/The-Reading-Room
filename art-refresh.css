@@ -1,0 +1,22 @@
+/* Artist-selected art-led hero. Preserves portrait ratio instead of stretching to fill a wide banner. */
+.art-hero-layout{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:clamp(30px,5vw,90px);align-items:center;padding:clamp(52px,7vw,105px) clamp(24px,7vw,110px);background:radial-gradient(ellipse at 82% 30%,#d5b99562,transparent 56%),linear-gradient(128deg,#f6f0e6,#e9decd);border-bottom:1px solid var(--line)}
+.art-hero-content{padding:16px 0 25px;max-width:590px}
+.art-hero-content h1{font-size:clamp(62px,6.2vw,108px);line-height:.89;margin:31px 0 28px}
+.art-hero-lede{font:italic clamp(22px,2.2vw,32px)/1.17 var(--serif);color:var(--muted);max-width:410px;margin:0 0 32px}
+.artwork-panel{min-width:0;margin:0;display:flex;flex-direction:column;align-items:center;gap:13px}
+.artwork-mat{background:#3b2a26;padding:clamp(9px,1.2vw,16px);width:min(100%,580px);box-shadow:0 24px 60px #271b1637,0 3px 8px #281c1436;outline:1px solid #a78b5b}
+.hero-artwork{display:block;width:100%;height:auto;aspect-ratio:3744 / 4000;object-fit:contain;background:#342820}
+.artwork-panel figcaption{font:11px/1.5 var(--sans);text-align:center;max-width:580px;color:var(--muted);letter-spacing:0}
+.artwork-panel figcaption a{text-decoration:underline;text-underline-offset:3px}
+.theme-night .art-hero-layout{background:radial-gradient(ellipse at 80% 20%,#7b623b44,transparent 55%),linear-gradient(125deg,#10241f,#20362d 65%,#162a24)}
+.theme-night .artwork-mat{background:#2c241b;outline-color:#a68a58;box-shadow:0 25px 70px #02090795,0 0 0 1px #9d795c55}
+.theme-night .artwork-panel figcaption{color:#c4b99f}
+.collection-group{min-width:0;padding:0 0 8px}
+.collection-group+.collection-group{border-top:1px solid var(--line);padding-top:30px}
+.collection-group-heading{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin:0 3px 10px}
+.collection-group-heading h3{font:500 clamp(31px,3.5vw,46px)/1.1 var(--serif);letter-spacing:-.018em;margin:0}
+.collection-group-count{font:600 10px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.collection-group-shelves{display:grid;gap:16px}
+.collection-group .shelf-row{min-width:0}
+@media(max-width:900px){.art-hero-layout{gap:26px;padding:55px 32px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}.art-hero-content h1{font-size:clamp(57px,7.6vw,78px)}}
+@media(max-width:700px){.art-hero-layout{display:flex;flex-direction:column;align-items:stretch;padding:43px 23px 33px;gap:32px}.art-hero-content{padding:0}.art-hero-content h1{font-size:clamp(62px,11vw,84px);margin:23px 0}.art-hero-lede{font-size:23px;margin-bottom:22px}.artwork-panel{align-items:stretch}.artwork-mat{width:min(100%,490px);margin:auto}.artwork-panel figcaption{font-size:10px}.collection-group+.collection-group{padding-top:24px}.collection-group-heading h3{font-size:36px}}
