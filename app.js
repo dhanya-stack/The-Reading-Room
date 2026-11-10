@@ -129,8 +129,9 @@
   function drawStats(){
     $('statTotal').textContent=books.length;$('statFinished').textContent=books.filter(b=>b.status==='finished').length;
     $('statReading').textContent=books.filter(b=>b.status==='reading').length;$('statPaused').textContent=books.filter(b=>b.status==='paused').length;
-    const year=new Date().getFullYear();$('currentYear').textContent=year;
-    const dated=books.filter(b=>/^\d{4}-\d\d-\d\d$/.test(b.finishedOn||''));$('statYear').textContent=dated.length?dated.filter(b=>b.finishedOn.startsWith(String(year))).length:'—';
+    const dated=books.filter(b=>/^\d{4}-\d\d-\d\d$/.test(b.finishedOn||''));
+    const byYear=dated.reduce((totals,book)=>{const year=book.finishedOn.slice(0,4);totals[year]=(totals[year]||0)+1;return totals},{});
+    const breakdown=$('yearBreakdown');breakdown.replaceChildren();Object.keys(byYear).sort((a,b)=>b.localeCompare(a)).forEach(year=>breakdown.append(el('div','ledger-row yearly-row',el('span','','Finished in '+year),el('strong','',byYear[year]))));
   }
   function renderAll(){drawHero();renderGenreFilter();drawLibrary();drawJournal();drawStats()}
   $('searchInput').addEventListener('input',drawLibrary);$('statusFilter').addEventListener('change',drawLibrary);$('genreFilter').addEventListener('change',drawLibrary);

@@ -26,3 +26,6 @@
 .dialog-cover .cover-stack .cover-art{width:100%;height:100%}
 .dialog-cover .cover-stack .remote-cover{max-height:340px}
 @media(max-width:600px){.scene-shelf .spine:nth-child(n+10){display:none}.dialog-cover .cover-stack{width:135px;height:205px}.dialog-cover .cover-stack .remote-cover{max-height:205px}}
+
+/* Original photographic room backdrops keep the interactive shelves as the foreground. */
+.room-stage{background:#7a5d43}.room-stage:before{z-index:1;opacity:.08}.room-stage:after{display:none}.room-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}.room-photo-night{display:none}.room-window,.wall-glow,.lamp,.armchair,.tea-cup,.plant-pothos,.plant-areca,.wall-frame,.stage-floor{display:none!important}.bookshelf-scene,.reading-paper{z-index:3}.theme-night .room-stage{background:#14231e}.theme-night .room-photo-day{display:none}.theme-night .room-photo-night{display:block}.about-section h2{font-size:clamp(64px,6.5vw,100px);margin-bottom:30px}.about-section .about-signature{font-size:28px}.year-layout{align-items:start}.year-layout h2{margin-top:0}.year-sheet #yearBreakdown:empty{display:none}
