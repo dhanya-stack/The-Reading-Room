@@ -50,6 +50,9 @@ content:
       - name: coverId
         label: Open Library cover ID
         type: string
+      - name: coverUrl
+        label: Verified external cover image URL
+        type: string
       - name: note
         label: Journal note
         type: text

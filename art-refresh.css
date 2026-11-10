@@ -1,10 +1,10 @@
 /* Artist-selected art-led hero. Preserves portrait ratio instead of stretching to fill a wide banner. */
 .established{display:inline-block;margin-left:10px;font:600 9px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);vertical-align:middle}
 .hero{max-width:none;background:var(--paper-deep)}
-.hero .artwork-panel{width:min(100%,1700px);margin:auto;padding:clamp(22px,3vw,48px) clamp(18px,5vw,88px) clamp(19px,2.5vw,38px)}
-.hero .artwork-mat{width:100%;max-width:none;padding:0;outline:0;box-shadow:none;background:#30251e}
-.hero .hero-artwork{width:100%;height:clamp(420px,57vw,820px);aspect-ratio:auto;object-fit:cover;object-position:center 42%;}
-.hero .artwork-panel figcaption{align-self:flex-end;max-width:800px;text-align:right}
+.hero .artwork-panel{width:min(100%,1200px);margin:auto;padding:clamp(28px,5vw,74px) clamp(22px,8vw,132px) clamp(19px,3vw,42px)}
+.hero .artwork-mat{width:100%;max-width:none;padding:clamp(6px,.8vw,11px);outline:1px solid #8e7754;box-shadow:0 20px 52px #271b1631;background:#30251e}
+.hero .hero-artwork{width:100%;height:auto;aspect-ratio:3744 / 4000;object-fit:contain;object-position:center;}
+.hero .artwork-panel figcaption{align-self:center;max-width:800px;text-align:center}
 .art-hero-layout{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:clamp(30px,5vw,90px);align-items:center;padding:clamp(52px,7vw,105px) clamp(24px,7vw,110px);background:radial-gradient(ellipse at 82% 30%,#d5b99562,transparent 56%),linear-gradient(128deg,#f6f0e6,#e9decd);border-bottom:1px solid var(--line)}
 .art-hero-content{padding:16px 0 25px;max-width:590px}
 .art-hero-content h1{font-size:clamp(62px,6.2vw,108px);line-height:.89;margin:31px 0 28px}
@@ -27,4 +27,4 @@
 @media(max-width:900px){.art-hero-layout{gap:26px;padding:55px 32px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}.art-hero-content h1{font-size:clamp(57px,7.6vw,78px)}}
 @media(max-width:700px){.art-hero-layout{display:flex;flex-direction:column;align-items:stretch;padding:43px 23px 33px;gap:32px}.art-hero-content{padding:0}.art-hero-content h1{font-size:clamp(62px,11vw,84px);margin:23px 0}.art-hero-lede{font-size:23px;margin-bottom:22px}.artwork-panel{align-items:stretch}.artwork-mat{width:min(100%,490px);margin:auto}.artwork-panel figcaption{font-size:10px}.collection-group+.collection-group{padding-top:24px}.collection-group-heading h3{font-size:36px}}
 .journal-list{display:grid;gap:12px;align-content:start}.journal-card{width:100%;text-align:left;border:1px solid var(--line);background:transparent;padding:20px 22px;color:var(--ink);display:grid;gap:3px}.journal-card:hover{background:var(--paper-deep)}.journal-card-title{font:500 29px/1.05 var(--serif)}.journal-card-author{color:var(--muted);font-size:12px}.journal-card-excerpt{margin-top:7px;color:var(--muted)}.journal-empty{margin:0;color:var(--muted);font:italic 23px/1.25 var(--serif)}.catalogue-error{color:#9d3d34}
-@media(max-width:700px){.hero .artwork-panel{padding:18px 0 14px}.hero .hero-artwork{height:auto;max-height:none;object-fit:contain;object-position:center}.hero .artwork-panel figcaption{padding:0 20px;text-align:left}.established{display:none}}
+@media(max-width:700px){.hero .artwork-panel{padding:22px 18px 14px}.hero .hero-artwork{height:auto;max-height:none;object-fit:contain;object-position:center}.hero .artwork-panel figcaption{padding:0 2px;text-align:center}.established{display:none}}
