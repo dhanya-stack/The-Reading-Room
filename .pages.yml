@@ -1,0 +1,71 @@
+media: assets/uploads
+content:
+  - name: catalogue
+    label: Reading catalogue
+    type: file
+    path: data/books.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Book ID
+        type: string
+        readonly: true
+      - name: title
+        type: string
+        required: true
+      - name: author
+        type: string
+        required: true
+      - name: status
+        label: Reading status
+        type: select
+        required: true
+        options:
+          values:
+            - name: reading
+              label: Currently reading
+            - name: finished
+              label: Books I've read
+            - name: want-to-read
+              label: Want to read
+      - name: genre
+        type: string
+      - name: year
+        label: Original publication year
+        type: number
+      - name: progress
+        label: Reading progress (%)
+        type: number
+      - name: finishedOn
+        label: Finished on
+        type: date
+        description: Leave blank unless the date is known.
+      - name: rating
+        label: Rating out of 5
+        type: number
+      - name: isbn
+        label: ISBN for the displayed edition
+        type: string
+      - name: coverId
+        label: Open Library cover ID
+        type: string
+      - name: note
+        label: Journal note
+        type: text
+      - name: reflection
+        label: Longer reflection
+        type: text
+      - name: published
+        label: Publish this reflection publicly
+        type: boolean
+        description: Only checked entries are visible in The journal.
+      - name: featured
+        label: Featured
+        type: boolean
+      - name: color
+        type: string
+        readonly: true
+settings:
+  commit:
+    message: "Update Reading Room catalogue"

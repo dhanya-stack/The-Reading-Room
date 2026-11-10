@@ -1,5 +1,4 @@
-/* Public library catalogue. Export a replacement from Editor desk. */
-window.BOOK_CATALOG = [
+[
   {
     "title": "Red Dragon",
     "author": "Thomas Harris",
@@ -15,7 +14,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "sage"
+    "color": "sage",
+    "published": false
   },
   {
     "title": "The Silence of the Lambs",
@@ -32,7 +32,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "rust"
+    "color": "rust",
+    "published": false
   },
   {
     "title": "Hannibal",
@@ -49,7 +50,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ink"
+    "color": "ink",
+    "published": false
   },
   {
     "title": "Hannibal Rising",
@@ -66,7 +68,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "plum"
+    "color": "plum",
+    "published": false
   },
   {
     "title": "Jane Eyre",
@@ -83,7 +86,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": true,
-    "color": "ochre"
+    "color": "ochre",
+    "published": false
   },
   {
     "title": "The Da Vinci Code",
@@ -100,7 +104,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "blue"
+    "color": "blue",
+    "published": false
   },
   {
     "title": "Digital Fortress",
@@ -117,7 +122,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "moss"
+    "color": "moss",
+    "published": false
   },
   {
     "title": "The Martian",
@@ -134,7 +140,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": true,
-    "color": "clay"
+    "color": "clay",
+    "published": false
   },
   {
     "title": "Artemis",
@@ -151,7 +158,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "sage"
+    "color": "sage",
+    "published": false
   },
   {
     "title": "Project Hail Mary",
@@ -168,7 +176,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": true,
-    "color": "rust"
+    "color": "rust",
+    "published": false
   },
   {
     "title": "The Thursday Murder Club",
@@ -185,7 +194,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": true,
-    "color": "ink"
+    "color": "ink",
+    "published": false
   },
   {
     "title": "The Man Who Died Twice",
@@ -202,7 +212,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "plum"
+    "color": "plum",
+    "published": false
   },
   {
     "title": "The Bullet That Missed",
@@ -219,7 +230,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ochre"
+    "color": "ochre",
+    "published": false
   },
   {
     "title": "The Last Devil to Die",
@@ -236,7 +248,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "blue"
+    "color": "blue",
+    "published": false
   },
   {
     "title": "Death Comes to Marlow",
@@ -253,7 +266,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "moss"
+    "color": "moss",
+    "published": false
   },
   {
     "title": "Moonflower Murders",
@@ -270,7 +284,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "clay"
+    "color": "clay",
+    "published": false
   },
   {
     "title": "Magpie Murders",
@@ -287,7 +302,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "sage"
+    "color": "sage",
+    "published": false
   },
   {
     "title": "Tell Me Your Dreams",
@@ -304,7 +320,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "rust"
+    "color": "rust",
+    "published": false
   },
   {
     "title": "The Hot Zone",
@@ -321,7 +338,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ink"
+    "color": "ink",
+    "published": false
   },
   {
     "title": "The Midnight Library",
@@ -338,7 +356,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": true,
-    "color": "plum"
+    "color": "plum",
+    "published": false
   },
   {
     "title": "The Very Secret Society of Irregular Witches",
@@ -355,7 +374,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ochre"
+    "color": "ochre",
+    "published": false
   },
   {
     "title": "The Flatshare",
@@ -372,7 +392,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "blue"
+    "color": "blue",
+    "published": false
   },
   {
     "title": "The Rosie Project",
@@ -389,7 +410,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "moss"
+    "color": "moss",
+    "published": false
   },
   {
     "title": "The Silent Patient",
@@ -406,7 +428,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "clay"
+    "color": "clay",
+    "published": false
   },
   {
     "title": "Harry Potter and the Philosopher’s Stone",
@@ -423,7 +446,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "sage"
+    "color": "sage",
+    "published": false
   },
   {
     "title": "Harry Potter and the Chamber of Secrets",
@@ -440,7 +464,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "rust"
+    "color": "rust",
+    "published": false
   },
   {
     "title": "Harry Potter and the Prisoner of Azkaban",
@@ -457,7 +482,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ink"
+    "color": "ink",
+    "published": false
   },
   {
     "title": "Harry Potter and the Goblet of Fire",
@@ -474,12 +500,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "plum"
+    "color": "plum",
+    "published": false
   },
   {
     "title": "Harry Potter and the Order of the Phoenix",
     "author": "J. K. Rowling",
-    "status": "rereading",
+    "status": "reading",
     "progress": 0,
     "id": "book-029",
     "genre": "Fantasy",
@@ -491,7 +518,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ochre"
+    "color": "ochre",
+    "published": false
   },
   {
     "title": "Harry Potter and the Half-Blood Prince",
@@ -508,7 +536,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "blue"
+    "color": "blue",
+    "published": false
   },
   {
     "title": "Harry Potter and the Deathly Hallows",
@@ -525,7 +554,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "moss"
+    "color": "moss",
+    "published": false
   },
   {
     "title": "1984",
@@ -542,7 +572,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "clay"
+    "color": "clay",
+    "published": false
   },
   {
     "title": "Seveneves",
@@ -559,12 +590,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "sage"
+    "color": "sage",
+    "published": false
   },
   {
     "title": "Crime and Punishment",
     "author": "Fyodor Dostoevsky",
-    "status": "paused",
+    "status": "reading",
     "progress": null,
     "id": "book-034",
     "genre": "Classics",
@@ -576,12 +608,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "rust"
+    "color": "rust",
+    "published": false
   },
   {
     "title": "Dune",
     "author": "Frank Herbert",
-    "status": "paused",
+    "status": "reading",
     "progress": null,
     "id": "book-035",
     "genre": "Science fiction",
@@ -593,7 +626,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ink"
+    "color": "ink",
+    "published": false
   },
   {
     "title": "The Order of Time",
@@ -610,7 +644,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "plum"
+    "color": "plum",
+    "published": false
   },
   {
     "title": "The Science of Interstellar",
@@ -627,7 +662,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ochre"
+    "color": "ochre",
+    "published": false
   },
   {
     "title": "Asimov’s New Guide to Science",
@@ -644,12 +680,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "blue"
+    "color": "blue",
+    "published": false
   },
   {
     "title": "Samsung Rising",
     "author": "Geoffrey Cain",
-    "status": "paused",
+    "status": "reading",
     "progress": null,
     "id": "book-039",
     "genre": "Technology",
@@ -661,12 +698,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "moss"
+    "color": "moss",
+    "published": false
   },
   {
     "title": "Chip War",
     "author": "Chris Miller",
-    "status": "paused",
+    "status": "reading",
     "progress": null,
     "id": "book-040",
     "genre": "Technology",
@@ -678,12 +716,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "clay"
+    "color": "clay",
+    "published": false
   },
   {
     "title": "Deep Work",
     "author": "Cal Newport",
-    "status": "paused",
+    "status": "reading",
     "progress": null,
     "id": "book-041",
     "genre": "Personal growth",
@@ -695,12 +734,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "sage"
+    "color": "sage",
+    "published": false
   },
   {
     "title": "London Falling",
     "author": "Patrick Radden Keefe",
-    "status": "paused",
+    "status": "reading",
     "progress": null,
     "id": "book-042",
     "genre": "Non-fiction",
@@ -712,12 +752,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "rust"
+    "color": "rust",
+    "published": false
   },
   {
     "title": "Foundation",
     "author": "Isaac Asimov",
-    "status": "paused",
+    "status": "reading",
     "progress": 40,
     "id": "book-043",
     "genre": "Science fiction",
@@ -729,12 +770,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ink"
+    "color": "ink",
+    "published": false
   },
   {
     "title": "The Garden of Small Beginnings",
     "author": "Abbi Waxman",
-    "status": "paused",
+    "status": "reading",
     "progress": null,
     "id": "book-044",
     "genre": "Contemporary fiction",
@@ -746,7 +788,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "plum"
+    "color": "plum",
+    "published": false
   },
   {
     "title": "The Untethered Soul",
@@ -763,12 +806,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ochre"
+    "color": "ochre",
+    "published": false
   },
   {
     "title": "Rebecca",
     "author": "Daphne du Maurier",
-    "status": "to-confirm",
+    "status": "finished",
     "progress": null,
     "id": "book-046",
     "genre": "Classics",
@@ -780,12 +824,13 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "blue"
+    "color": "blue",
+    "published": false
   },
   {
     "title": "Persuasion",
     "author": "Jane Austen",
-    "status": "to-confirm",
+    "status": "want-to-read",
     "progress": null,
     "id": "book-047",
     "genre": "Classics",
@@ -797,7 +842,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "moss"
+    "color": "moss",
+    "published": false
   },
   {
     "title": "Emotional Intelligence",
@@ -814,7 +860,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "sage"
+    "color": "sage",
+    "published": false
   },
   {
     "title": "What Is Called Thinking?",
@@ -831,7 +878,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "rust"
+    "color": "rust",
+    "published": false
   },
   {
     "title": "Claude Code for the Rest of Us",
@@ -848,7 +896,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ink"
+    "color": "ink",
+    "published": false
   },
   {
     "title": "Permission to Feel",
@@ -865,7 +914,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "plum"
+    "color": "plum",
+    "published": false
   },
   {
     "title": "Set Boundaries, Find Peace",
@@ -882,7 +932,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ochre"
+    "color": "ochre",
+    "published": false
   },
   {
     "title": "The Happiness Trap",
@@ -899,7 +950,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "blue"
+    "color": "blue",
+    "published": false
   },
   {
     "title": "Hold Me Tight",
@@ -916,7 +968,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "moss"
+    "color": "moss",
+    "published": false
   },
   {
     "title": "Self-Compassion",
@@ -933,7 +986,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "clay"
+    "color": "clay",
+    "published": false
   },
   {
     "title": "The Art of Thinking Clearly",
@@ -950,7 +1004,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "sage"
+    "color": "sage",
+    "published": false
   },
   {
     "title": "Thinking in Systems",
@@ -967,7 +1022,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "rust"
+    "color": "rust",
+    "published": false
   },
   {
     "title": "The Design of Everyday Things",
@@ -984,7 +1040,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ink"
+    "color": "ink",
+    "published": false
   },
   {
     "title": "Mental Models",
@@ -1001,7 +1058,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "plum"
+    "color": "plum",
+    "published": false
   },
   {
     "title": "Laws of UX",
@@ -1018,7 +1076,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "ochre"
+    "color": "ochre",
+    "published": false
   },
   {
     "title": "Behave",
@@ -1035,7 +1094,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "blue"
+    "color": "blue",
+    "published": false
   },
   {
     "title": "The Brain: The Story of You",
@@ -1052,7 +1112,8 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "moss"
+    "color": "moss",
+    "published": false
   },
   {
     "title": "Make It Stick",
@@ -1069,6 +1130,7 @@ window.BOOK_CATALOG = [
     "rating": null,
     "finishedOn": "",
     "featured": false,
-    "color": "clay"
+    "color": "clay",
+    "published": false
   }
-];
+]

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3eee5">
-  <meta name="description" content="Between the Pages — a personal reading room, growing bookshelf and journal of stories that stay.">
-  <title>Between the Pages — The Reading Room</title>
+  <meta name="description" content="The Reading Room — a personal reading collection and journal.">
+  <title>The Reading Room</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,42 +16,33 @@
 <body class="theme-day">
   <a class="skip" href="#library">Skip to the bookshelf</a>
   <header class="site-head">
-    <a class="wordmark" href="#home" aria-label="Between the Pages home">Between <em>the</em> Pages</a>
+    <a class="wordmark" href="#home" aria-label="The Reading Room home">The Reading Room <span class="established">Est. 2026</span></a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#home" data-nav="home">The room</a>
       <a href="#library" data-nav="library">Bookshelf</a>
       <a href="#journal" data-nav="journal">The journal</a>
-      <a href="#year" data-nav="year">Reading year</a>
+      <a href="#year" data-nav="year">Reading stats</a>
       <a href="#about" data-nav="about">About</a>
     </nav>
     <button class="theme-switch" id="themeToggle" type="button" title="Switch to the Midnight Library" aria-label="Switch reading room theme"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Midnight library</span></button>
   </header>
 
   <main>
-    <section class="hero" id="home" aria-labelledby="heroTitle">
-      <div class="art-hero-layout">
-        <div class="art-hero-content">
-          <p class="eyebrow">A personal literary journal <span class="eyebrow-rule"></span> Est. 2026</p>
-          <h1 id="heroTitle">A room for<br><em>the stories</em><br>that stay.</h1>
-          <p class="art-hero-lede">Books I’ve read, the thoughts they leave behind, and a few pages in between.</p>
-          <a class="text-link" href="#library">Explore the collection <span aria-hidden="true">↗</span></a>
+    <section class="hero" id="home" aria-label="The Reading Room">
+      <figure class="artwork-panel">
+        <div class="artwork-mat">
+          <img class="hero-artwork" src="assets/harriet-backer-library.jpg" width="3744" height="4000" fetchpriority="high" alt="Harriet Backer's oil painting of Thorvald Boeck's private library, with richly coloured bookshelves, wooden chairs and warm light.">
         </div>
-        <figure class="artwork-panel">
-          <div class="artwork-mat">
-            <img class="hero-artwork" src="assets/harriet-backer-library.jpg" width="3744" height="4000" fetchpriority="high" alt="Harriet Backer's oil painting of Thorvald Boeck's private library, with richly coloured bookshelves, wooden chairs and warm light.">
-          </div>
-          <figcaption>Harriet Backer, <cite>The Library of Thorvald Boeck</cite> (1902) · National Museum of Norway · <a href="https://commons.wikimedia.org/wiki/File:Harriet_Backer_-_The_Library_of_Thorvald_Boeck_-_NG.M.03504_-_National_Museum_of_Art,_Architecture_and_Design.jpg" target="_blank" rel="noopener noreferrer">Artwork image</a> licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Unmodified reproduction.</figcaption>
-        </figure>
-      </div>
-      <div class="scene-bottom"><span>01 / The reading room</span><span>Scroll to explore <span aria-hidden="true">↓</span></span></div>
+        <figcaption>Harriet Backer, <cite>The Library of Thorvald Boeck</cite> (1902) · National Museum of Norway · <a href="https://commons.wikimedia.org/wiki/File:Harriet_Backer_-_The_Library_of_Thorvald_Boeck_-_NG.M.03504_-_National_Museum_of_Art,_Architecture_and_Design.jpg" target="_blank" rel="noopener noreferrer">Artwork image</a> licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Unmodified reproduction.</figcaption>
+      </figure>
     </section>
 
     <section class="library-section" id="library" aria-labelledby="libraryTitle">
-      <div class="section-topline"><span>02 / The collection</span><span class="line"></span><span id="libraryCount">A library in progress</span></div>
+      <div class="section-topline"><span class="line"></span><span id="libraryCount">A library in progress</span></div>
       <div class="section-heading split-heading"><div><p class="eyebrow">An evolving collection</p><h2 id="libraryTitle">The <em>bookshelf</em></h2><p>Every cover has a place here. Open a book for its details and any published journal notes.</p></div><button class="random-link" id="surpriseBtn" type="button"><span class="sparkle" aria-hidden="true">✳</span> Surprise me with a book</button></div>
       <div class="library-toolbar">
         <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.3"/><path d="m15.3 15.3 5 5"/></svg><input id="searchInput" type="search" placeholder="Find a title or author…" aria-label="Search title or author"></label>
-        <div class="filter-group"><label class="visually-hidden" for="statusFilter">Filter by reading status</label><select id="statusFilter"><option value="all">All books</option><option value="finished">Finished</option><option value="reading">Currently reading</option><option value="rereading">Rereading</option><option value="paused">On pause</option><option value="want-to-read">Want to read</option><option value="to-confirm">To confirm</option></select><label class="visually-hidden" for="genreFilter">Filter by genre</label><select id="genreFilter"><option value="all">All genres</option></select></div>
+        <div class="filter-group"><label class="visually-hidden" for="statusFilter">Filter by reading status</label><select id="statusFilter"><option value="all">All books</option><option value="current">Currently reading</option><option value="finished">Books I’ve read</option><option value="want-to-read">Want to read</option></select><label class="visually-hidden" for="genreFilter">Filter by genre</label><select id="genreFilter"><option value="all">All genres</option></select></div>
       </div>
       <p class="result-line" id="resultCount" aria-live="polite"></p>
       <div class="library-shelves" id="libraryShelves"></div>
@@ -59,28 +50,24 @@
     </section>
 
     <section class="journal-section" id="journal" aria-labelledby="journalTitle">
-      <div class="section-topline"><span>03 / Marginalia</span><span class="line"></span><span>Thoughts between chapters</span></div>
+      <div class="section-topline"><span class="line"></span></div>
       <div class="journal-layout">
-        <div class="journal-intro"><p class="eyebrow">The journal</p><h2 id="journalTitle">What a book <em>leaves behind.</em></h2><p>Some books become favourites. Others leave a question, a new idea, or a sentence worth returning to. This is where those reflections live.</p></div>
-        <div class="notebook" id="journalNotebook"><div class="notebook-binding" aria-hidden="true"></div><div class="notebook-content"><div class="notebook-small">From the journal · <span id="noteCounter">001</span></div><h3 id="featuredJournalTitle">A space for reflection</h3><p class="journal-author" id="featuredJournalAuthor">A journal entry will appear here when published.</p><div class="notebook-rule"></div><p class="notebook-writing" id="featuredJournalText">A place for passages, questions, and thoughts that deserve a second look.</p><button class="notebook-open" id="readJournalBtn" type="button" hidden>Read the full entry <span aria-hidden="true">↗</span></button><div class="notebook-bottom">Notes from a reading life <span aria-hidden="true">✳</span></div></div></div>
+        <div class="journal-intro"><h2 id="journalTitle">The <em>journal</em></h2></div>
+        <div class="journal-list" id="journalNotebook" aria-live="polite"></div>
       </div>
     </section>
 
     <section class="year-section" id="year" aria-labelledby="yearTitle">
-      <div class="section-topline"><span>04 / The reading year</span><span class="line"></span></div>
-      <div class="year-layout"><div><h2 id="yearTitle">Reading <em>Year</em></h2></div><div class="year-sheet"><span class="sheet-label">Library ledger</span><div class="ledger-row"><span>Books on the shelves</span><strong id="statTotal">0</strong></div><div class="ledger-row"><span>Finished</span><strong id="statFinished">0</strong></div><div class="ledger-row"><span>Currently reading</span><strong id="statReading">0</strong></div><div class="ledger-row"><span>On pause</span><strong id="statPaused">0</strong></div><div id="yearBreakdown" aria-live="polite"></div></div></div>
+      <div class="section-topline"><span class="line"></span></div>
+      <div class="year-layout"><div><h2 id="yearTitle">Reading <em>Stats</em></h2></div><div class="year-sheet"><span class="sheet-label">All-time</span><div class="ledger-row"><span>Total books</span><strong id="statTotal">0</strong></div><div class="ledger-row"><span>Books I’ve read</span><strong id="statFinished">0</strong></div><div class="ledger-row"><span>Currently reading</span><strong id="statReading">0</strong></div><div class="ledger-row"><span>Want to read</span><strong id="statWant">0</strong></div><div id="yearBreakdown" aria-live="polite"></div></div></div>
     </section>
 
-    <section class="about-section" id="about"><h2>About</h2><p class="about-copy">Between the Pages started because I read a lot and wanted a better way to keep track of the books in my life, including the ones I’ve finished, the ones I’m reading now, and the ones I want to pick up next.</p><p class="about-copy">I also wanted a place to write down my thoughts after reading: what a book was about, what stood out to me, and whether I would recommend it to someone else. I hope these reflections can help other readers find books they might enjoy.</p><p class="about-copy">Over time, I’d like this to become a space where readers can share recommendations, reading lists, and their own thoughts on books. The idea is simple: discover good books, talk about them, and connect with people who enjoy reading too.</p><p class="about-signature">Dan</p><a href="#home" class="text-link">Return to the reading room ↑</a></section>
+    <section class="about-section" id="about"><h2>About</h2><p class="about-copy">The Reading Room started because I read a lot and wanted a better way to keep track of the books in my life, including the ones I’ve finished, the ones I’m reading now, and the ones I want to pick up next.</p><p class="about-copy">I also wanted a place to write down my thoughts after reading: what a book was about, what stood out to me, and whether I would recommend it to someone else. I hope these reflections can help other readers find books they might enjoy.</p><p class="about-copy">Over time, I’d like this to become a space where readers can share recommendations, reading lists, and their own thoughts on books. The idea is simple: discover good books, talk about them, and connect with people who enjoy reading too.</p><p class="about-signature">— Dan</p><a href="#home" class="text-link">Return to the reading room ↑</a></section>
   </main>
-  <footer><span>Between the Pages · The Reading Room</span><span>Book cover images via <a href="https://openlibrary.org/" target="_blank" rel="noopener noreferrer">Open Library</a></span><a href="?edit=1#library" id="editorEntry">Editor desk</a></footer>
+  <footer><span>The Reading Room</span><span>Book cover images via <a href="https://openlibrary.org/" target="_blank" rel="noopener noreferrer">Open Library</a></span><a href="AUTHORING.md">Authoring</a></footer>
 
   <div class="dialog-overlay" id="dialogOverlay" hidden><div class="book-dialog" id="bookDialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" tabindex="-1"><button class="dialog-close" id="dialogClose" aria-label="Close book details" type="button">×</button><div class="dialog-cover" id="dialogCover"></div><div class="dialog-body"><p class="eyebrow">The bookshelf · <span id="dialogStatus"></span></p><h2 id="dialogTitle"></h2><p class="dialog-author" id="dialogAuthor"></p><div class="dialog-meta" id="dialogMeta"></div><div class="dialog-progress" id="dialogProgress" hidden><span>Reading progress</span><div class="progress-track"><span id="dialogProgressBar"></span></div><strong id="dialogProgressNum"></strong></div><div class="published-notes" id="publishedNotes"></div><div class="dialog-links"><a href="#" id="openLibraryLink" target="_blank" rel="noopener noreferrer" hidden>See edition on Open Library ↗</a><button type="button" id="editThisBook" class="editor-only" hidden>Edit this entry</button></div></div></div></div>
 
-  <div class="editor-dock" id="editorDock" hidden><div class="editor-dock-head"><div><span class="eyebrow">Author workspace · Local edits</span><strong>The editor’s desk</strong></div><button type="button" id="editorClose" aria-label="Collapse editor panel">−</button></div><div class="editor-dock-body" id="editorBody"><p>Changes stay in this browser until you export <strong>books.js</strong> and publish it with Codex.</p><button type="button" class="editor-btn" id="addBook">+ Add a book</button><button type="button" class="editor-btn" id="exportBookJs">Export books.js for Codex</button><button type="button" class="editor-btn subtler" id="exportJson">Download JSON backup</button><label class="import-label">Import an existing books.js or JSON file<input type="file" id="importFile" accept=".json,.js,application/json,text/javascript"></label><button type="button" class="editor-btn subtler" id="resetLocal">Discard local edits</button><p class="editor-hint" id="editorMessage" role="status" aria-live="polite"></p></div></div>
-
-  <div class="edit-overlay" id="editOverlay" hidden><div class="edit-dialog" role="dialog" aria-modal="true" aria-labelledby="editTitle"><div class="edit-title-line"><div><span class="eyebrow">A page from the journal</span><h2 id="editTitle">Edit a book</h2></div><button type="button" id="editClose" class="dialog-close" aria-label="Close editor">×</button></div><form id="editForm"><input type="hidden" id="fieldId"><div class="edit-fields"><label>Title <input id="fieldTitle" required maxlength="200"></label><label>Author <input id="fieldAuthor" required maxlength="180"></label><label>Genre <input id="fieldGenre" maxlength="80"></label><label>Original publication year <input id="fieldYear" type="number" min="0" max="2100"></label><label>Reading status <select id="fieldStatus"><option value="finished">Finished</option><option value="reading">Reading</option><option value="rereading">Rereading</option><option value="paused">On pause</option><option value="want-to-read">Want to read</option><option value="to-confirm">To confirm</option></select></label><label>Progress (%) <input id="fieldProgress" type="number" min="0" max="100"></label><label>Finished date (optional) <input id="fieldFinished" type="date"></label><label>My rating / 5 <select id="fieldRating"><option value="">Unrated</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></label><label class="edit-full">Edition ISBN for the real cover (optional) <input id="fieldIsbn" placeholder="e.g. 9780141441146" inputmode="numeric"></label><label class="edit-full">Open Library cover ID (optional) <input id="fieldCoverId" placeholder="If you have an exact cover ID"></label><label class="edit-full">Public journal note <textarea id="fieldNote" rows="4" placeholder="Your thoughts to share with readers. Leave blank until ready."></textarea></label><label class="edit-full">After the last page <textarea id="fieldReflection" rows="4" placeholder="A longer reflection to publish, if you wish."></textarea></label><label class="edit-check"><input type="checkbox" id="fieldFeatured"> Feature in the journal</label></div><div class="edit-actions"><button type="button" id="editDelete" class="delete-btn">Remove entry</button><button type="submit" class="editor-btn primary-save">Save on this device</button></div></form></div></div>
-
-  <script src="data/books.js"></script><script src="app.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
